@@ -1,0 +1,4 @@
+python main.py --task 1 --n 5 --r 10
+python main.py --task 2 --numbers 3 2 1
+python main.py --task 3 --coords 1 2 3 4
+python main.py --task 4 --n 10
