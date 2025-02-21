@@ -24,6 +24,7 @@ def tests():
         print(f"Ошибка: тестирование модулей не прошло успешно!\n{e}")
         exit(TESTERROR)
 
+
 # Главная функция
 def main(args):
     # Если аргументы не переданы, запрашиваем данные у пользователя
@@ -103,8 +104,11 @@ def main(args):
         print(f"Результат вычисления гармонического ряда по числу {n} = {result:.3}")
 
 if __name__ == "__main__":
+    # Запуск тестов
+    tests()
+
     # Парсинг аргументов командной строки
-    parser = argparse.ArgumentParser(description="Выполнение различных задач.")
+    parser = argparse.ArgumentParser(description="Выполнение различных задач. Например, 'python main.py --task 1 --n 3 --r 20'")
     parser.add_argument("--task", type=int, choices=range(1, 5), help="Номер задачи (1-4)")
     parser.add_argument("--n", type=int, help="Количество сторон многоугольника или число для гармонического ряда")
     parser.add_argument("--r", type=float, help="Радиус окружности")
@@ -113,8 +117,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # Запуск тестов
-    tests()
+
 
     # Запуск основной программы
     main(args)
