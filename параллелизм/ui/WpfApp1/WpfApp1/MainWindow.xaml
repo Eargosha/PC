@@ -1,0 +1,53 @@
+﻿<Window x:Class="FractalApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Fractals" Height="600" Width="800">
+    <TabControl>
+        <!-- Вкладка Мандельброта -->
+        <TabItem Header="Mandelbrot">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Button x:Name="btnMandelbrotUi" Content="Start in UI" Click="MandelbrotUi_Click" Margin="5"/>
+                    <Button x:Name="btnMandelbrotBg" Content="Start in Background" Click="MandelbrotBg_Click" Margin="5"/>
+                    <Button x:Name="btnCancelMandelbrot" Content="Cancel" Click="CancelMandelbrot_Click" Margin="5" IsEnabled="False"/>
+                </StackPanel>
+
+                <ProgressBar x:Name="progressMandelbrot" Grid.Row="1" Height="20" Margin="5"/>
+
+                <Image x:Name="imgMandelbrot" Grid.Row="2" Stretch="Uniform"/>
+            </Grid>
+        </TabItem>
+
+        <!-- Вкладка Жюлиа -->
+        <TabItem Header="Julia">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Button x:Name="btnJuliaUi" Content="Start in UI" Click="JuliaUi_Click" Margin="5"/>
+                    <Button x:Name="btnJuliaBg" Content="Start in Background" Click="JuliaBg_Click" Margin="5"/>
+                    <Button x:Name="btnCancelJulia" Content="Cancel" Click="CancelJulia_Click" Margin="5" IsEnabled="False"/>
+                    <TextBlock Text="C: " VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtReal" Width="50" Margin="5" Text="-0.4"/>
+                    <TextBox x:Name="txtImag" Width="50" Margin="5" Text="0.6"/>
+                </StackPanel>
+
+                <ProgressBar x:Name="progressJulia" Grid.Row="1" Height="20" Margin="5"/>
+
+                <Image x:Name="imgJulia" Grid.Row="2" Stretch="Uniform"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
