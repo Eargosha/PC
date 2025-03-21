@@ -1,55 +1,50 @@
 #include <cmath>         
 #include <iostream>      
 #include <vector>        
-#include <future>        // Асинхронные операции
 #include <thread>        // Работа с потоками
 #include <chrono>        // Замер времени
-#include <functional>    
 
 using namespace std;
 
-// Функция для вычисления части суммы с выводом прогресса
-// start - начальный индекс, end - конечный индекс
-// symbol - символ для отображения прогресса
-double calculate_part(unsigned long long start,
-    unsigned long long end,
-    char symbol)
-{
-    const unsigned long long range = end - start;
-    const unsigned long long step = max(1ULL, range / 10); // Шаг для прогресса (10% от диапазона)
+// Функция для численного интегрирования методом прямоугольников
+double integrate_part(double a, double b, int steps, char symbol, double* result) {
     double sum = 0;
+    double step_size = (b - a) / steps; // Шаг интегрирования
 
-    // Основной цикл вычислений
-    for (unsigned long long i = start; i < end; ++i) {
-        sum += sin(i); // Накопление суммы синусов
+    for (size_t i = 0; i < steps; ++i) {
+        double x = a + i * step_size + step_size / 2; // Середина прямоугольника
+        sum += sin(x) * step_size; // Площадь прямоугольника
 
         // Вывод символа прогресса через равные интервалы
-        if ((i - start) % step == 0) {
+        if (i % (steps / 10) == 0) {
             cout << symbol << flush; // flush для немедленного вывода
         }
     }
+
+    *result = sum; // Сохранение результата в переданную переменную
     return sum;
 }
 
 // Callback-функция для обработки результатов потока
-// result - вычисленная сумма
-// thread_id - идентификатор потока
 void result_callback(double result, int thread_id) {
     cout << "\nThread " << thread_id << " result: " << result << endl;
 }
 
 int main() {
-    unsigned long long N;         // Общее количество итераций
-    int threads_num;              // Количество потоков
+    double a, b;              // Границы интегрирования
+    int total_steps;          // Общее количество шагов
+    int threads_num;          // Количество потоков
 
     // Ввод параметров
-    cout << "Enter iterations count: ";
-    cin >> N;
-    cout << "Enter threads number: ";
+    cout << "Enter integration interval [a, b]: ";
+    cin >> a >> b;
+    cout << "Enter total number of steps: ";
+    cin >> total_steps;
+    cout << "Enter number of threads: ";
     cin >> threads_num;
 
     // Проверка корректности введенных данных
-    if (N < 1 || threads_num < 1) {
+    if (a >= b || total_steps < 1 || threads_num < 1) {
         cerr << "Invalid parameters!" << endl;
         return 1;
     }
@@ -57,42 +52,51 @@ int main() {
     // Символы для отображения прогресса разных потоков
     vector<char> symbols = { '|', '.', '-', '+', '*', '#', '@', '~', '^', '&' };
 
-    // Вектор для хранения будущих результатов
-    // future говорит о том, что значения будут записаны в будущем
-    vector<future<double>> futures;
+    // Вектор для хранения потоков
+    vector<thread> threads;
+
+    // Вектор для хранения результатов каждого потока
+    vector<double> results(threads_num, 0.0);
 
     // Старт замера времени выполнения
     const auto start_time = chrono::high_resolution_clock::now();
 
     // Распределение работы между потоками (Декомпозиция по данным)
-    unsigned long long chunk = N / threads_num;  // Базовый размер блока
-    unsigned long long extra = N % threads_num;  // Остаток для распределения (число данных % кол-во потоков)
-    unsigned long long current = 0;              // Текущая позиция
+    double chunk_size = (b - a) / threads_num; // Размер интервала для одного потока
+    double current = a;                       // Текущая позиция
 
-    // Создание асинхронных задач
-    for (int i = 0; i < threads_num; ++i) {
-        // Расчет границ для текущего потока
-        const unsigned long long end = current + chunk + (i < extra ? 1 : 0);
-        const char symbol = symbols[i % symbols.size()]; // Выбор символа
+    for (size_t i = 0; i < threads_num; ++i) {
+        double end = current + chunk_size; // Конец интервала для текущего потока
+        if (i == threads_num - 1) { // Последний поток
+            end = b; // Последний поток берет остаток интервала
+        }
 
-        // Запуск асинхронной задачи:
-        // - launch::async гарантирует выполнение в отдельном потоке
-        // - calculate_part - целевая функция
-        // - current, end, symbol - аргументы функции
-        futures.push_back(async(launch::async, calculate_part, current, end, symbol));
+        int steps_per_thread = total_steps / threads_num; // Количество шагов для потока
+        if (i == threads_num - 1) {
+            steps_per_thread = total_steps - (threads_num - 1) * steps_per_thread; // Остаток шагов
+        }
+
+        char symbol = symbols[i % symbols.size()]; // Выбор символа
+
+        // Создание потока
+        threads.emplace_back(integrate_part, current, end, steps_per_thread, symbol, &results[i]);
 
         current = end; // Обновление текущей позиции
     }
 
+    // Ожидание завершения всех потоков
+    for (auto& t : threads) {
+        if (t.joinable()) {
+            t.join();
+        }
+    }
+
     // Сбор и обработка результатов
-    double total = 0;
-    for (int i = 0; auto & f : futures) {
-        // Ожидание результата и получение значения
-        double result = f.get();
-
-        result_callback(result, i++);
-
-        total += result;
+    double total_integral = 0;
+    for (int i = 0; i < threads_num; ++i) {
+        result_callback(results[i], i);
+        /// ????
+        total_integral += results[i];
     }
 
     // Фиксация времени окончания и расчет длительности
@@ -100,8 +104,18 @@ int main() {
     const auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
 
     // Вывод финальных результатов
-    cout << "\nTotal sum: " << total << endl;
+    cout << "\nTotal integral: " << total_integral << endl;
     cout << "Execution time: " << duration.count() << " ms" << endl;
 
     return 0;
 }
+
+// НА МОДУЛИ 
+// фигня с суммой  на нуле выдало не нуль
+// 
+// 
+// Задание.Несколько потоков
+// Создать параллельный алгоритм решения некоторой задачи(см.задание про отдельный поток в приложении с GUI), в котором отдельные потоки используют общую память.
+// Организовать синхронизацию потоков с помощью встроенных средств языка программирования(мьютексы).Параметры задачи(число подзадач) и число потоков задаются пользователем.
+// Оцените время выполнения программы для разного числа потоков.Постройте график.Определите оптимальное число потоков.
+// График 
