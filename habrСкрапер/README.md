@@ -1,0 +1,1 @@
+### [Решение в Colab](https://colab.research.google.com/drive/1BllkZD_1zg19p1aNrIDXRImy3FUj4k8N?usp=sharing)
