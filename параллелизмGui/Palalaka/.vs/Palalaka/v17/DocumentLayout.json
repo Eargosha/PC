@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Eargosha\\Desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0412\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\Palalaka\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5CD7050-BA1A-416E-9C8A-99F1FDD92382}|Palalaka\\Palalaka.csproj|c:\\users\\eargosha\\desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0432\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\palalaka\\palalaka\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5CD7050-BA1A-416E-9C8A-99F1FDD92382}|Palalaka\\Palalaka.csproj|solutionrelative:palalaka\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5CD7050-BA1A-416E-9C8A-99F1FDD92382}|Palalaka\\Palalaka.csproj|c:\\users\\eargosha\\desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0432\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\palalaka\\palalaka\\fractalcalculations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5CD7050-BA1A-416E-9C8A-99F1FDD92382}|Palalaka\\Palalaka.csproj|solutionrelative:palalaka\\fractalcalculations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5CD7050-BA1A-416E-9C8A-99F1FDD92382}|Palalaka\\Palalaka.csproj|c:\\users\\eargosha\\desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0432\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\palalaka\\palalaka\\fractalrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5CD7050-BA1A-416E-9C8A-99F1FDD92382}|Palalaka\\Palalaka.csproj|solutionrelative:palalaka\\fractalrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5CD7050-BA1A-416E-9C8A-99F1FDD92382}|Palalaka\\Palalaka.csproj|c:\\users\\eargosha\\desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0432\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\palalaka\\palalaka\\fractalcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5CD7050-BA1A-416E-9C8A-99F1FDD92382}|Palalaka\\Palalaka.csproj|solutionrelative:palalaka\\fractalcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5CD7050-BA1A-416E-9C8A-99F1FDD92382}|Palalaka\\Palalaka.csproj|c:\\users\\eargosha\\desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0432\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\palalaka\\palalaka\\fractaloperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5CD7050-BA1A-416E-9C8A-99F1FDD92382}|Palalaka\\Palalaka.csproj|solutionrelative:palalaka\\fractaloperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FractalOperations.cs",
+              "DocumentMoniker": "C:\\Users\\Eargosha\\Desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0412\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\Palalaka\\Palalaka\\FractalOperations.cs",
+              "RelativeDocumentMoniker": "Palalaka\\FractalOperations.cs",
+              "ToolTip": "C:\\Users\\Eargosha\\Desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0412\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\Palalaka\\Palalaka\\FractalOperations.cs",
+              "RelativeToolTip": "Palalaka\\FractalOperations.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwDgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T13:48:35.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FractalCalculator.cs",
+              "DocumentMoniker": "C:\\Users\\Eargosha\\Desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0412\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\Palalaka\\Palalaka\\FractalCalculator.cs",
+              "RelativeDocumentMoniker": "Palalaka\\FractalCalculator.cs",
+              "ToolTip": "C:\\Users\\Eargosha\\Desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0412\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\Palalaka\\Palalaka\\FractalCalculator.cs",
+              "RelativeToolTip": "Palalaka\\FractalCalculator.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAcwDUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T13:47:26.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FractalRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\Eargosha\\Desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0412\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\Palalaka\\Palalaka\\FractalRenderer.cs",
+              "RelativeDocumentMoniker": "Palalaka\\FractalRenderer.cs",
+              "ToolTip": "C:\\Users\\Eargosha\\Desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0412\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\Palalaka\\Palalaka\\FractalRenderer.cs",
+              "RelativeToolTip": "Palalaka\\FractalRenderer.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAwwHgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T13:46:26.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FractalCalculations.cs",
+              "DocumentMoniker": "C:\\Users\\Eargosha\\Desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0412\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\Palalaka\\Palalaka\\FractalCalculations.cs",
+              "RelativeDocumentMoniker": "Palalaka\\FractalCalculations.cs",
+              "ToolTip": "C:\\Users\\Eargosha\\Desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0412\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\Palalaka\\Palalaka\\FractalCalculations.cs",
+              "RelativeToolTip": "Palalaka\\FractalCalculations.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAwwGoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T13:39:41.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Eargosha\\Desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0412\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\Palalaka\\Palalaka\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Palalaka\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Eargosha\\Desktop\\\u0441\u0435\u043C\u0430\u043A\\\u0412\u0435\u0442\u0440\u043E\u0432\\\u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u0438\u0437\u043C\\ui\\Palalaka\\Palalaka\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Palalaka\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAYwKUAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T11:11:09.956Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
