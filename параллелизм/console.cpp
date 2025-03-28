@@ -1,7 +1,7 @@
 #include <iostream>
+#include <cmath>
 #include <vector>
-#include "integration.cpp"
-#include "threadTest.cpp"
+#include "integration.h"
 
 using namespace std;
 
@@ -39,7 +39,7 @@ int main() {
     }
 
     // Запускаем само тестирование с полученными параметрами
-    run_integration_test(a, b, total_steps, threads_nums);
+    run_integration_test(sin,a, b, total_steps, threads_nums);
 
     return 0;
 }
