@@ -2,6 +2,8 @@
 #include <vector>
 #include <thread>
 #include <chrono>
+#include <cmath>
+#include "Header.h"
 
 using namespace std;
 
@@ -11,7 +13,7 @@ using namespace std;
 // b Конец интервала интегрирования
 // total_steps Общее количество шагов интегрирования
 // threads_nums Вектор с количествами потоков для тестирования
-void run_integration_test(double a, double b, int total_steps, const vector<int>& threads_nums) {
+void run_integration_test(double (*func_to_int)(double), double a, double b, int total_steps, const vector<int>& threads_nums) {
     vector<double> execution_times;  // Вектор для хранения времени выполнения каждого теста
 
     // Вывод информации о параметрах тестирования
@@ -54,7 +56,7 @@ void run_integration_test(double a, double b, int total_steps, const vector<int>
             char symbol = symbols[i % symbols.size()];
             
             // Создаем поток для интегрирования своей части интервала
-            threads.emplace_back(integrate_part, current, end, 
+            threads.emplace_back(integrate_part, func_to_int, current, end,
                                steps_per_thread, symbol, &results[i]);
             current = end;  // Сдвигаем границу для следующего потока
         }
