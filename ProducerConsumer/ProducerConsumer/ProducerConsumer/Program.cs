@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Linq;
 using System.Threading.Tasks;
-
 
 // Класс для хранения данных о температуре
 public class TemperatureMarks
@@ -105,16 +105,34 @@ class Program
             e.Cancel = true;
         };
 
-        // Создаем экземпляры производителя и потребителя
+        // Создаем экземпляр производителя
         var producer = new Producer();
-        var consumer = new Consumer();
 
-        // Запускаем задачи для производителя и потребителя
+        // Получаем количество ядер процессора
+        int coreCount = Environment.ProcessorCount;
+        Console.WriteLine($"Количество ядер процессора: {coreCount}");
+
+        // Enumerable — это статический класс в пространстве имен System.Linq.
+        // Он предоставляет набор методов расширения для работы с коллекциями, которые реализуют интерфейс IEnumerable<T>.
+        // Эти методы позволяют выполнять различные операции над коллекциями, такие как фильтрация, преобразование, сортировка и т.д.
+        // Создаем массив потребителей
+        var consumers = Enumerable.Range(1, coreCount)
+                                  .Select(_ => new Consumer())
+                                  .ToArray();
+        // Select — это метод расширения, который выполняет преобразование каждого элемента коллекции.
+
+        // Запускаем задачи для производителя
         var producerTask = producer.GenerateDataAsync();
-        var consumerTask = consumer.ProcessDataAsync();
 
-        // Ждем завершения работы потребителя
-        await consumerTask;
+        // Запускаем задачи для всех потребителей
+        var consumerTasks = consumers.Select((consumer, index) =>
+        {
+            Console.WriteLine($"Запущен Consumer #{index + 1}");
+            return consumer.ProcessDataAsync();
+        }).ToArray();
+
+        // Ждем завершения работы всех потребителей
+        await Task.WhenAll(consumerTasks);
 
         Console.WriteLine("Мониторинг за температурой завершен");
     }
