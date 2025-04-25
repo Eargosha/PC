@@ -12,7 +12,7 @@ public static class TemperatureProducer
         // IsAddingCompleted помечает что очередь завершена и помещать в нее больше нельзя
         // Возвращает значение, указывающее, помечена ли данная коллекция BlockingCollection<T> как закрытая для добавления элементов.
         while (!queue.IsAddingCompleted)
-        {
+        { 
             try
             {
                 // Создаем новый объект данных о температуре
