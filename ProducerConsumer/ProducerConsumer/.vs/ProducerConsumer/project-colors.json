@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "129d17de-883c-4c5c-a996-a7f2f63e1e5d": {
+      "ProjectGuid": "129d17de-883c-4c5c-a996-a7f2f63e1e5d",
+      "DisplayName": "ProducerConsumer",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
