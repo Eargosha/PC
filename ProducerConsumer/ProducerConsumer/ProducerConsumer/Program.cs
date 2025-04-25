@@ -1,4 +1,4 @@
-﻿#pragma warning disable CA1416
+#pragma warning disable CA1416
 using System;
 using System.Collections.Concurrent; // Пространство имен содержит классы, которые обеспечивают потокобезопасные коллекции
 using System.Threading.Tasks;
@@ -33,8 +33,8 @@ class Program
             e.Cancel = true; // Отменяем стандартное поведение завершения программы
         };
 
-        // Создаем задачу для производителя и запускаем на фоне в отдельном потоке
-        Task producer = Task.Run(() => TemperatureProducer.Produce(queue));
+        // Создаем задачу для производителя
+        Task producer = Task.Run(() => Producer());
 
         // Получаем количество консюмеров из кол-ва ядер процессора
         int consumerCount = Environment.ProcessorCount;
